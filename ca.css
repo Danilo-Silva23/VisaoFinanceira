@@ -1,0 +1,304 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos globais */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    background-color: rgba(128, 128, 128, 0.274);
+    color: #333;
+}
+nav {
+    background-color: #FFFFFF;
+    height: 140px;
+    display: flex;
+    justify-content: center; /* Alinha o conteúdo ao centro horizontalmente */
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 6%;
+    position: relative; /* Adiciona para que o botão de sair seja posicionado em relação ao nav */
+}
+
+.logo {
+    position: absolute; /* Mantém o logo fixo à esquerda */
+    left: 30px;
+    top:45%;
+    transform: translateY(-50%);
+}
+.logo img {
+    max-height: 110px;
+    margin-top: 20px;
+}
+.nav-items {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-items li {
+    text-align: center;
+}
+
+.nav-items li a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.nav-items li a:hover {
+    color: #808080;
+}
+
+.menu-icon {
+    position: absolute; /* Posiciona o ícone de menu na direita */
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+/* Estilos da sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #00559F;
+    color: #FFFFFF;
+    padding-top: 60px;
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+    font-size: 18px;
+}
+
+.sidebar ul li a:hover {
+    background-color: #04B3FA;
+}
+
+/* Estilos do overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+    z-index: 999;
+}
+
+/* Estilos do intro-content */
+.intro-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.intro-content .intro-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-content .intro-image img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 15px; /* Arredonda a imagem */
+}
+
+.intro-content .intro-text {
+    flex: 1;
+    text-align: center;
+}
+
+.intro-content .intro-text h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.intro-content .intro-text p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.intro-content .intro-text strong {
+    font-size: 20px;
+}
+
+/* Estilos do conteúdo principal */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center; /* Centraliza todo o texto no conteúdo */
+}
+
+.elementor-widget-wrap {
+    margin-bottom: 20px;
+}
+
+.elementor-heading-title {
+    font-size: 24px;
+    color: #00559F;
+    margin-bottom: 10px;
+    letter-spacing: 1px; /* Aumenta o espaçamento entre as letras */
+}
+
+.elementor-button {
+    background-color: #00559F;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.elementor-button:hover {
+    background-color: #04B3FA;
+}
+
+.elementor-button-link {
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+/* Estilos do formulário */
+form {
+    background-color: #F9F9F9;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 500px;
+    margin: 50px auto;
+    backdrop-filter: blur(10px); /* Efeito de blur */
+    -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
+}
+
+form h2 {
+    font-size: 24px;
+    color: #00559F;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+form label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+form input, form textarea, form button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #E0E0E0;
+    border-radius: 5px;
+}
+
+/* Borda personalizada para os campos de input */
+form input[type="text"], form input[type="email"], form textarea {
+    font-size: 16px;
+    border: 1px solid #04B3FA; /* Cor da borda */
+    border-radius: 8px; /* Cantos arredondados */
+    padding: 12px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    transition: border-color 0.3s ease; /* Efeito suave ao focar */
+}
+
+form input[type="text"]:focus, form input[type="email"]:focus, form textarea:focus {
+    border-color: #04B3FA; /* Muda a cor da borda ao focar */
+    outline: none;
+}
+
+form button {
+    background-color: #00559F;
+    color: #FFFFFF;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #04B3FA;
+}
+
+/* Alinhamento da lista à esquerda */
+.elementor-widget-container ul {
+    text-align: left; /* Garante que a lista esteja alinhada à esquerda */
+    margin-left: 20px; /* Adiciona uma margem para garantir que a lista não encoste na borda */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .nav-items {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .logo img {
+        max-height: 110px;
+        margin-top: 20px;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    .overlay.active {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .intro-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro-content .intro-image,
+    .intro-content .intro-text {
+        flex: none;
+        width: 100%;
+    }
+
+    .intro-content .intro-image img {
+        max-width: 80%;
+    }
+}
